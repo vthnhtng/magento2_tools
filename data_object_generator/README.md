@@ -46,25 +46,9 @@ Creates two files:
 To clone only the `generate_data_object.py` file from the repository:
 
 ```bash
-# Clone with sparse checkout to get only the script
-git clone --no-checkout <repository-url> temp-clone
-cd temp-clone
-git sparse-checkout init --cone
-git sparse-checkout set data_object_generator/generate_data_object.py
-git checkout
-cp data_object_generator/generate_data_object.py ./
-cd ..
-rm -rf temp-clone
-```
-
-Or using a single command with sparse checkout:
-
-```bash
-git clone --filter=blob:none --sparse <repository-url> temp-clone
-cd temp-clone
-git sparse-checkout set data_object_generator/generate_data_object.py
-cp data_object_generator/generate_data_object.py ./
-cd ..
+# Clone script
+git clone https://github.com/vthnhtng/magento2_tools.git temp-clone
+cp ./temp-clone/data_object_generator/generate_data_object.py ./
 rm -rf temp-clone
 ```
 
